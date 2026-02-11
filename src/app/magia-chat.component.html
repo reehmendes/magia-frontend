@@ -1,0 +1,34 @@
+<div class="magia-container">
+  <header class="chat-header">
+    <div class="logo">MAGIA</div>
+    <div id="status-label">{{ statusLabel }}</div>
+  </header>
+
+  <div class="chat-body" id="chat-content">
+    <app-chat-message *ngFor="let msg of messages" [message]="msg"></app-chat-message>
+  </div>
+
+  <footer class="chat-footer">
+    <div class="input-area" id="input-container" [class.disabled]="isProcessing">
+      <label for="file-input" class="btn-icon">📎</label>
+      <input
+        type="file"
+        id="file-input"
+        accept=".pdf,.jpg,.png"
+        [disabled]="isProcessing"
+        (change)="onFileSelected($event)"
+      />
+
+      <input
+        type="text"
+        id="text-input"
+        placeholder="Digite uma mensagem..."
+        [(ngModel)]="userInput"
+        [disabled]="isProcessing"
+        (keyup.enter)="sendMessage()"
+      />
+
+      <button class="btn-icon" id="send-btn" [disabled]="isProcessing" (click)="sendMessage()">➔</button>
+    </div>
+  </footer>
+</div>
