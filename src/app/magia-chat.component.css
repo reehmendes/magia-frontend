@@ -1,0 +1,112 @@
+:host {
+  --bg-dark: #0d1117;
+  --bg-card: #161b22;
+  --primary-blue: #2f81f7;
+  --text-main: #c9d1d9;
+  --text-muted: #8b949e;
+  --bot-bubble: #21262d;
+  --user-bubble: #1f6feb;
+  --error: #f85149;
+  --success: #3fb950;
+
+  margin: 0;
+  background-color: var(--bg-dark);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--text-main);
+}
+
+.magia-container {
+  width: 95%;
+  max-width: 800px;
+  height: 85vh;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+}
+
+#status-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.chat-body {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-image: radial-gradient(#1f242c 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.chat-footer {
+  padding: 20px;
+  border-top: 1px solid #30363d;
+  background: var(--bg-card);
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-dark);
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid #444c56;
+}
+
+input[type='text'] {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  padding: 8px 0;
+  font-size: 0.95rem;
+}
+
+.btn-icon {
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  background: none;
+  border: none;
+  transition: 0.2s;
+}
+
+.btn-icon:hover {
+  color: var(--primary-blue);
+}
+
+#file-input {
+  display: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
